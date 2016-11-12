@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    {% if all_albums %}
+    <ul>
+        <h1>Album</h1>
+        {% for album in all_albums %}
+        <li><a href='/music/{{ album.id }}/'>{{ album.album_title }} </a></li>
+        {% endfor %}
+    </ul>
+
+    {% else  %}
+        <h3>Add Some Albums to the list</h3>
+    {% endif %}
+
+    {% if error_message%}
+        <p><strong>{{ error_message }}</strong></p>
+</body>
+</html>
